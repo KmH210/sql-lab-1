@@ -74,11 +74,3 @@ WHERE reports_to = 'Andrew';
 
 
 
-
--- SELECT ship_name, order_id, product_id 
--- FROM orders
--- JOIN order_details 
--- ON orders.order_id = orders_details.order_id
--- JOIN products 
--- ON orders.
--- WHERE orders.product_id = 1;
