@@ -56,18 +56,18 @@ WHERE employees.city = 'London';
 
 -- #16 Use a join to get the ship name of all orders that include a discontinued product. 
 -- (See orders, order_details, and products. 1 means discontinued.)
-SELECT orders.ship_name, order_details. FROM orders
-JOIN order_details ON orders.order_id = orders_details.order_id
-WHERE orders.product_id = 1;
+SELECT orders.ship_name FROM order_details
+JOIN orders ON order_details.order_id = orders.order_id
+JOIN products ON order_details.product_id = products.product_id
+WHERE products.discontinued = 1;
 
 -- #17 Get first names of all employees who report to no one.
-SELECT first_name, reports_to FROM employees 
-JOIN employees.first_name ON employees.reports_to
-WHERE employees.reports_to = null;
+SELECT first_name FROM employees 
+WHERE reports_to = null;
 
 -- #18 Get first names of all employees who report to Andrew.
-SELECT first_name, reports_to FROM employees 
-WHERE employees.reports_to = null;
+SELECT first_name FROM employees 
+WHERE reports_to = 'Andrew';
 
 
 
